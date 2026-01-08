@@ -3,7 +3,10 @@
     "allow": [
       "Bash(tree:*)",
       "Bash(pnpm add:*)",
-      "Bash(pnpm dev)"
+      "Bash(pnpm dev)",
+      "mcp__plugin_figma_figma__get_design_context",
+      "mcp__plugin_figma_figma__get_screenshot",
+      "Bash(mkdir:*)"
     ]
   }
 }
