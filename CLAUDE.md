@@ -23,7 +23,9 @@ This project uses **pnpm** as the package manager (evidenced by `pnpm-lock.yaml`
 - **Framework**: React 19.2 with React Router DOM 7.11
 - **Build Tool**: Vite 7.2
 - **Language**: TypeScript 5.9
-- **Styling**: Tailwind CSS with shadcn/ui components (new-york style)
+- **Styling**:
+  - Tailwind CSS with shadcn/ui components (new-york style)
+  - Less 4.5.1 for additional styling capabilities
 - **UI Libraries**:
   - lucide-react for icons
   - class-variance-authority for component variants
@@ -56,6 +58,7 @@ The project uses `@/` as an alias for the `src/` directory:
 - Uses Tailwind CSS with CSS variables for theming
 - Dark mode support via class strategy
 - Custom color system based on HSL CSS variables (--primary, --secondary, etc.)
+- Less preprocessor support - import `.less` files directly in components
 - shadcn/ui configuration in `components.json` with:
   - Style: new-york
   - Base color: zinc
