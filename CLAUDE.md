@@ -72,3 +72,69 @@ The project uses `@/` as an alias for the `src/` directory:
 
 ## Adding shadcn/ui Components
 When adding new shadcn/ui components, they should be placed in `src/components/` following the configuration in `components.json`.
+
+## UI Generation Style Rules
+
+When creating UI components, follow these styling conventions:
+
+### 1. Simple Styles (≤3 CSS properties)
+Use Tailwind CSS classes directly in the component:
+```tsx
+<div className="flex items-center gap-4">
+  <span className="text-lg font-bold">Title</span>
+</div>
+```
+
+### 2. Complex Styles (>3 CSS properties)
+Organize as a folder with separate style file:
+```
+src/components/MyComponent/
+├── index.tsx       # Component logic
+└── index.less      # Component styles
+```
+
+Example:
+```tsx
+// index.tsx
+import './index.less';
+
+export const MyComponent = () => {
+  return <div className="my-component">Content</div>;
+};
+```
+
+```less
+// index.less
+.my-component {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: var(--background);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+```
+
+### 3. Color Management
+Use CSS variables for repeated colors instead of hardcoding values:
+
+**Good:**
+```less
+.card {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+}
+```
+
+**Bad:**
+```less
+.card {
+  background: #1890ff;
+  border-color: #1890ff;
+  color: #ffffff;
+}
+```
+
+Refer to existing CSS variables in `src/index.css` for the project's color system.
+

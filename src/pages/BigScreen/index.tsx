@@ -1,7 +1,5 @@
-import { cn } from "@/lib/utils";
-
 const BigScreen = () => {
-  return <div className={cn("min-h-screen")}></div>;
+  return <div>大屏页面</div>;
 };
 
 export default BigScreen;
