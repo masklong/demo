@@ -69,6 +69,7 @@ The project uses `@/` as an alias for the `src/` directory:
 - Pages are organized in `src/pages/[PageName]/index.tsx`
 - Use the `cn()` utility from `@/lib/utils` for conditional className merging
 - BigScreen page demonstrates a responsive grid layout with dark theme
+- **Component Composition**: When implementing UI, break down large modules into reasonable components, always maintaining React component best practices and proper component composition
 
 ## Adding shadcn/ui Components
 When adding new shadcn/ui components, they should be placed in `src/components/` following the configuration in `components.json`.
@@ -137,4 +138,28 @@ Use CSS variables for repeated colors instead of hardcoding values:
 ```
 
 Refer to existing CSS variables in `src/index.css` for the project's color system.
+
+### 4. Handling Missing Icons and Images
+When generating UI and icons or images are unavailable:
+- Use open-source icons from lucide-react (already installed in the project)
+- Use placeholder images or solid background colors as fallbacks
+- When implementing from Figma using MCP:
+  - Download images to the project directory when available
+  - If images cannot be obtained, use open-source icons or background colors as placeholders
+
+**Example with icon fallback:**
+```tsx
+import { Image as ImageIcon } from 'lucide-react';
+
+// When image is unavailable
+<div className="w-full h-48 bg-muted flex items-center justify-center">
+  <ImageIcon className="w-12 h-12 text-muted-foreground" />
+</div>
+```
+
+**Example with background color placeholder:**
+```tsx
+// Simple colored placeholder
+<div className="w-full h-48 bg-gradient-to-br from-primary/20 to-secondary/20" />
+```
 
