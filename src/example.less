@@ -1,0 +1,24 @@
+// Example Less file to demonstrate Less support
+@primary-color: #1890ff;
+@border-radius: 4px;
+@spacing: 16px;
+
+.example-container {
+  padding: @spacing;
+  border-radius: @border-radius;
+  background-color: @primary-color;
+
+  .example-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: @spacing / 2;
+  }
+
+  .example-content {
+    color: white;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
